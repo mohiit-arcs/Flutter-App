@@ -31,7 +31,7 @@ class _BottomNavState extends State<BottomNav> {
     walletPage = Wallet();
     orderPage = Order();
     profilePage = Profile();
-    pages = [homepage, walletPage, orderPage, profilePage];
+    pages = [homepage, orderPage, walletPage, profilePage];
   }
 
   @override
@@ -69,7 +69,7 @@ class _BottomNavState extends State<BottomNav> {
               color: Colors.white,
             )),
           ]),
-          body: pages[currentTabIndex],
+      body: pages[currentTabIndex],
     );
   }
 }
