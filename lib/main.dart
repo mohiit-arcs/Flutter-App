@@ -1,7 +1,19 @@
+import 'dart:io';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/pages/onBoard.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Platform.isAndroid
+      ? await Firebase.initializeApp(
+          options: const FirebaseOptions(
+              apiKey: "**apiKey**",
+              appId: "**appId**",
+              messagingSenderId: "**messagingSenderId**",
+              projectId: "**projectId**"))
+      : await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
