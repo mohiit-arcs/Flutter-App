@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:fooddeliveryapp/pages/bottomNav.dart';
+import 'package:fooddeliveryapp/pages/forgotPassword.dart';
 import 'package:fooddeliveryapp/pages/signup.dart';
 import 'package:fooddeliveryapp/widget/widget_support.dart';
 
@@ -53,13 +55,13 @@ class _LogInState extends State<LogIn> {
               'User Not Found!',
               style: TextStyle(fontSize: 18.0),
             )));
-      } else if (e.code == 'wrong-password') {
+      } else if (e.code == 'invalid-credential') {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             closeIconColor: Colors.black54,
             showCloseIcon: true,
             backgroundColor: Colors.redAccent,
             content: Text(
-              'Wrong Password!',
+              'Invalid Credentials!',
               style: TextStyle(fontSize: 18.0, color: Colors.white),
             )));
       }
@@ -165,11 +167,19 @@ class _LogInState extends State<LogIn> {
                       SizedBox(
                         height: 20.0,
                       ),
-                      Container(
-                        alignment: Alignment.topRight,
-                        child: Text(
-                          'Forgot Password?',
-                          style: AppWidget.semiBoldTextFieldStyle(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ForgotPassword()));
+                        },
+                        child: Container(
+                          alignment: Alignment.topRight,
+                          child: Text(
+                            'Forgot Password?',
+                            style: AppWidget.semiBoldTextFieldStyle(),
+                          ),
                         ),
                       ),
                       SizedBox(
