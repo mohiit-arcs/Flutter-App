@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/pages/bottomNav.dart';
 import 'package:fooddeliveryapp/pages/forgotPassword.dart';
 import 'package:fooddeliveryapp/pages/login.dart';
+import 'package:fooddeliveryapp/service/database.dart';
+import 'package:fooddeliveryapp/service/shared_pref.dart';
 import 'package:fooddeliveryapp/widget/widget_support.dart';
+import 'package:random_string/random_string.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -41,6 +44,18 @@ class _SignUpState extends State<SignUp> {
                 )
               ],
             )));
+        String Id = randomAlphaNumeric(10);
+        Map<String, dynamic> addUserInfo = {
+          "Id": Id,
+          "Name": nameController.text,
+          "Email": emailController.text,
+          "Wallet": "0"
+        };
+        await DataBaseMethods().addUserDetail(addUserInfo, Id);
+        await SharedPreferenceHelper().saveUserId(Id);
+        await SharedPreferenceHelper().saveUserName(nameController.text);
+        await SharedPreferenceHelper().saveUserEmail(emailController.text);
+        await SharedPreferenceHelper().saveUserWallet("0");
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
