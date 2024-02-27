@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fooddeliveryapp/pages/bottomNav.dart';
 import 'package:fooddeliveryapp/pages/forgotPassword.dart';
 import 'package:fooddeliveryapp/pages/signup.dart';
@@ -97,7 +96,7 @@ class _LogInState extends State<LogIn> {
           child: Text(""),
         ),
         Container(
-          margin: EdgeInsets.only(top: 60.0, right: 20.0, left: 20.0),
+          margin: const EdgeInsets.only(top: 60.0, right: 20.0, left: 20.0),
           child: Column(
             children: [
               Center(
@@ -106,7 +105,7 @@ class _LogInState extends State<LogIn> {
                 width: MediaQuery.of(context).size.width / 1.5,
                 fit: BoxFit.cover,
               )),
-              SizedBox(
+              const SizedBox(
                 height: 50.0,
               ),
               Material(
@@ -122,14 +121,14 @@ class _LogInState extends State<LogIn> {
                   child: Form(
                     key: _formKey,
                     child: Column(children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       Text(
                         'LogIn',
                         style: AppWidget.headlineTextFieldStyle(),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       TextFormField(
@@ -146,7 +145,7 @@ class _LogInState extends State<LogIn> {
                             hintStyle: AppWidget.semiBoldTextFieldStyle(),
                             prefixIcon: Icon(Icons.email_outlined)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       TextFormField(
@@ -164,7 +163,7 @@ class _LogInState extends State<LogIn> {
                         obscureText: true,
                         obscuringCharacter: "*",
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20.0,
                       ),
                       GestureDetector(
@@ -182,7 +181,7 @@ class _LogInState extends State<LogIn> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 80.0,
                       ),
                       GestureDetector(
@@ -219,7 +218,7 @@ class _LogInState extends State<LogIn> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 70.0,
               ),
               InkWell(

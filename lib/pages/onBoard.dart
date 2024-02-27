@@ -50,14 +50,14 @@ class _OnBoardState extends State<OnBoard> {
                         width: MediaQuery.of(context).size.width,
                         fit: BoxFit.fill,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40.0,
                       ),
                       Text(
                         contents[i].title,
                         style: AppWidget.semiBoldTextFieldStyle(),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20.0,
                       ),
                       Text(
@@ -115,7 +115,7 @@ class _OnBoardState extends State<OnBoard> {
     return Container(
       height: 10.0,
       width: currentIndex == index ? 18 : 7,
-      margin: EdgeInsets.only(right: 5.0),
+      margin: const EdgeInsets.only(right: 5.0),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0), color: Colors.black38),
     );

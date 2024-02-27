@@ -35,7 +35,7 @@ class _BottomNavState extends State<BottomNav> {
   }
 
   @override
-  Widget build(BuildContext) {
+  Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
           height: 60,
@@ -47,7 +47,7 @@ class _BottomNavState extends State<BottomNav> {
               currentTabIndex = index;
             });
           },
-          items: [
+          items: const [
             CurvedNavigationBarItem(
                 child: Icon(
               Icons.home_outlined,

@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fooddeliveryapp/pages/bottomNav.dart';
 import 'package:fooddeliveryapp/pages/forgotPassword.dart';
 import 'package:fooddeliveryapp/pages/login.dart';
@@ -100,7 +99,7 @@ class _SignUpState extends State<SignUp> {
           child: Text(""),
         ),
         Container(
-          margin: EdgeInsets.only(top: 60.0, right: 20.0, left: 20.0),
+          margin: const EdgeInsets.only(top: 60.0, right: 20.0, left: 20.0),
           child: Column(
             children: [
               Center(
@@ -109,14 +108,14 @@ class _SignUpState extends State<SignUp> {
                 width: MediaQuery.of(context).size.width / 1.5,
                 fit: BoxFit.cover,
               )),
-              SizedBox(
+              const SizedBox(
                 height: 50.0,
               ),
               Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(20.0),
                 child: Container(
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                  padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                   height: MediaQuery.of(context).size.height / 1.65,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
@@ -125,14 +124,14 @@ class _SignUpState extends State<SignUp> {
                   child: Form(
                     key: _formKey,
                     child: Column(children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       Text(
                         'Sign Up',
                         style: AppWidget.headlineTextFieldStyle(),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       TextFormField(
@@ -147,9 +146,9 @@ class _SignUpState extends State<SignUp> {
                         decoration: InputDecoration(
                             hintText: "Name",
                             hintStyle: AppWidget.semiBoldTextFieldStyle(),
-                            prefixIcon: Icon(Icons.person_outline)),
+                            prefixIcon: const Icon(Icons.person_outline)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       TextFormField(
@@ -164,9 +163,9 @@ class _SignUpState extends State<SignUp> {
                         decoration: InputDecoration(
                             hintText: "Email",
                             hintStyle: AppWidget.semiBoldTextFieldStyle(),
-                            prefixIcon: Icon(Icons.email_outlined)),
+                            prefixIcon: const Icon(Icons.email_outlined)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30.0,
                       ),
                       TextFormField(
@@ -180,11 +179,11 @@ class _SignUpState extends State<SignUp> {
                         decoration: InputDecoration(
                             hintText: "Password",
                             hintStyle: AppWidget.semiBoldTextFieldStyle(),
-                            prefixIcon: Icon(Icons.password_outlined)),
+                            prefixIcon: const Icon(Icons.password_outlined)),
                         obscureText: true,
                         obscuringCharacter: "*",
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20.0,
                       ),
                       GestureDetector(
@@ -203,7 +202,7 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 80.0,
                       ),
                       GestureDetector(
@@ -221,10 +220,10 @@ class _SignUpState extends State<SignUp> {
                             elevation: 5.0,
                             borderRadius: BorderRadius.circular(20),
                             child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 8.0),
+                              padding: const EdgeInsets.symmetric(vertical: 8.0),
                               width: 200,
                               decoration: BoxDecoration(
-                                  color: Color(0Xffff5722),
+                                  color: const Color(0Xffff5722),
                                   borderRadius: BorderRadius.circular(20)),
                               child: const Center(
                                   child: Text(
@@ -241,7 +240,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 70.0,
               ),
               InkWell(

@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/pages/details.dart';
 import 'package:fooddeliveryapp/widget/widget_support.dart';
@@ -19,7 +16,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 50.0,
           left: 20.0,
         ),
@@ -34,19 +31,19 @@ class _HomeState extends State<Home> {
                   style: AppWidget.boldTextFieldStyle(),
                 ),
                 Container(
-                  margin: EdgeInsets.only(right: 20.0),
-                  padding: EdgeInsets.all(3.0),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.only(right: 20.0),
+                  padding: const EdgeInsets.all(3.0),
+                  decoration: const BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(7.0))),
-                  child: Icon(
+                  child: const Icon(
                     Icons.shopping_cart_outlined,
                     color: Colors.white,
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Text(
@@ -57,11 +54,11 @@ class _HomeState extends State<Home> {
               'Discover and Get Great Food',
               style: AppWidget.lightTextFieldStyle(),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Container(margin: EdgeInsets.only(right: 20.0), child: showItem()),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             SingleChildScrollView(
@@ -74,12 +71,12 @@ class _HomeState extends State<Home> {
                           MaterialPageRoute(builder: (context) => Details()));
                     },
                     child: Container(
-                      margin: EdgeInsets.all(4.0),
+                      margin: const EdgeInsets.all(4.0),
                       child: Material(
                         elevation: 5.0,
                         borderRadius: BorderRadius.circular(20),
                         child: Container(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -93,7 +90,7 @@ class _HomeState extends State<Home> {
                                 'Veggie Taco Hash',
                                 style: AppWidget.semiBoldTextFieldStyle(),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5.0,
                               ),
                               Text(
@@ -110,7 +107,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 15.0,
                   ),
                   InkWell(
@@ -119,12 +116,12 @@ class _HomeState extends State<Home> {
                           MaterialPageRoute(builder: (context) => Details()));
                     },
                     child: Container(
-                      margin: EdgeInsets.all(4.0),
+                      margin: const EdgeInsets.all(4.0),
                       child: Material(
                         elevation: 5.0,
                         borderRadius: BorderRadius.circular(20),
                         child: Container(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -138,7 +135,7 @@ class _HomeState extends State<Home> {
                                 'Mixed Veg Salad',
                                 style: AppWidget.semiBoldTextFieldStyle(),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5.0,
                               ),
                               Text(
@@ -158,16 +155,16 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             Container(
-              margin: EdgeInsets.only(right: 20.0),
+              margin: const EdgeInsets.only(right: 20.0),
               child: Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                    padding: EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -177,7 +174,7 @@ class _HomeState extends State<Home> {
                           width: 120,
                           fit: BoxFit.cover,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20.0,
                         ),
                         Column(
@@ -188,7 +185,7 @@ class _HomeState extends State<Home> {
                                   'Mediterranean Chicpeas Salad',
                                   style: AppWidget.semiBoldTextFieldStyle(),
                                 )),
-                            SizedBox(
+                            const SizedBox(
                               height: 5.0,
                             ),
                             Container(
@@ -197,7 +194,7 @@ class _HomeState extends State<Home> {
                                   'Honey Goot Cheese',
                                   style: AppWidget.lightTextFieldStyle(),
                                 )),
-                            SizedBox(
+                            const SizedBox(
                               height: 5.0,
                             ),
                             Container(
@@ -263,7 +260,7 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
                   color: pizza ? Colors.black : Colors.white,
                   borderRadius: BorderRadius.circular(8.0)),
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Image.asset(
                 'images/pizza.png',
                 height: 40,
@@ -289,7 +286,7 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
                   color: salad ? Colors.black : Colors.white,
                   borderRadius: BorderRadius.circular(8.0)),
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Image.asset(
                 'images/salad.png',
                 height: 40,
@@ -315,7 +312,7 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
                   color: burger ? Colors.black : Colors.white,
                   borderRadius: BorderRadius.circular(8.0)),
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Image.asset(
                 'images/burger.png',
                 height: 40,
