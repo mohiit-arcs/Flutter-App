@@ -29,21 +29,6 @@ class _SignUpState extends State<SignUp> {
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email, password: password);
 
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            closeIconColor: Colors.black54,
-            showCloseIcon: true,
-            backgroundColor: Colors.redAccent,
-            content: Column(
-              children: [
-                Text(
-                  'Registered Successfully',
-                  style: TextStyle(fontSize: 20.0),
-                ),
-                SizedBox(
-                  height: 1.0,
-                )
-              ],
-            )));
         String Id = randomAlphaNumeric(10);
         Map<String, dynamic> addUserInfo = {
           "Id": Id,
@@ -61,6 +46,21 @@ class _SignUpState extends State<SignUp> {
             MaterialPageRoute(
               builder: (context) => BottomNav(),
             ));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            closeIconColor: Colors.black54,
+            showCloseIcon: true,
+            backgroundColor: Colors.redAccent,
+            content: Column(
+              children: [
+                Text(
+                  'Registered Successfully',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: 1.0,
+                )
+              ],
+            )));
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
