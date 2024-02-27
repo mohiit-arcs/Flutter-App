@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooddeliveryapp/widget/widget_support.dart';
 
 class AddFood extends StatefulWidget {
   const AddFood({super.key});
@@ -8,8 +9,216 @@ class AddFood extends StatefulWidget {
 }
 
 class _AddFoodSate extends State<AddFood> {
+  final List<String> fooditems = ['Ice-cream', 'Burger', 'Salad', 'Pizza'];
+  String? value;
+
+  TextEditingController nameController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
+  TextEditingController detailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: true,
+        appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: Color(0xFF373866),
+            ),
+          ),
+          centerTitle: true,
+          title: Text(
+            'Add Item',
+            style: AppWidget.lightTextFieldStyle(),
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            margin: const EdgeInsets.only(
+                left: 20.0, right: 20.0, top: 20.0, bottom: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Upload the Item Picture',
+                  style: AppWidget.semiBoldTextFieldStyle(),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Center(
+                  child: Material(
+                    elevation: 4.0,
+                    borderRadius: BorderRadius.circular(20.0),
+                    child: Container(
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black, width: 1.5),
+                          borderRadius: BorderRadius.circular(20.0)),
+                      child: const Icon(Icons.image_rounded),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                Text(
+                  'Item Name',
+                  style: AppWidget.semiBoldTextFieldStyle(),
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFFececf8),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: TextField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Enter Item Name",
+                        hintStyle: AppWidget.lightTextFieldStyle()),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                Text(
+                  "Item Price",
+                  style: AppWidget.semiBoldTextFieldStyle(),
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFFececf8),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: TextField(
+                    controller: priceController,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Enter Item Price",
+                        hintStyle: AppWidget.lightTextFieldStyle()),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                Text(
+                  "Item Detail",
+                  style: AppWidget.semiBoldTextFieldStyle(),
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFFececf8),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: TextField(
+                    controller: detailController,
+                    maxLines: 6,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Enter Item Detail",
+                        hintStyle: AppWidget.lightTextFieldStyle()),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  "Select Category",
+                  style: AppWidget.semiBoldTextFieldStyle(),
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: const Color(0xFFececf8),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      items: fooditems
+                          .map((item) => DropdownMenuItem<String>(
+                              value: item,
+                              child: Text(
+                                item,
+                                style: const TextStyle(
+                                    fontSize: 18.0, color: Colors.black),
+                              )))
+                          .toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          this.value = value;
+                        });
+                      },
+                      dropdownColor: Colors.white,
+                      hint: const Text("Select Category"),
+                      iconSize: 36,
+                      icon: const Icon(
+                        Icons.arrow_drop_down,
+                        color: Colors.black,
+                      ),
+                      value: value,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                Center(
+                    child: Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 5.0),
+                    width: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Center(
+                      child: Text(
+                        "Add",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                )),
+                const SizedBox(
+                  height: 10.0,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

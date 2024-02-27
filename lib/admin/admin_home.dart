@@ -19,7 +19,7 @@ class _AdminHomeState extends State<AdminHome> {
           children: [
             Center(
               child: Text(
-                "Home Admin",
+                "Admin Home",
                 style: AppWidget.headlineTextFieldStyle(),
               ),
             ),
