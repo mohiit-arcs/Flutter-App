@@ -14,7 +14,8 @@ void main() async {
               apiKey: "**apiKey**",
               appId: "**appId**",
               messagingSenderId: "**messagingSenderId**",
-              projectId: "**projectId**"))
+              projectId: "**projectId**",
+              storageBucket: "**storageBucket**"))
       : await Firebase.initializeApp();
   Stripe.publishableKey = publishableKey;
   await Stripe.instance.applySettings();
