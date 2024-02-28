@@ -39,7 +39,8 @@ class _AddFoodSate extends State<AddFood> {
     if (selectedImage != null &&
         nameController.text.trim() != "" &&
         priceController.text.trim() != "" &&
-        detailController.text.trim() != "") {
+        detailController.text.trim() != "" &&
+        categoryValue != null) {
       setState(() {
         adding = true;
       });
@@ -139,22 +140,27 @@ class _AddFoodSate extends State<AddFood> {
                           ),
                         ),
                       )
-                    : Center(
-                        child: Material(
-                          elevation: 7.0,
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: Colors.black, width: 1.5),
-                                borderRadius: BorderRadius.circular(20.0)),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20.0),
-                              child: Image.file(
-                                selectedImage!,
-                                fit: BoxFit.cover,
+                    : GestureDetector(
+                        onTap: () {
+                          getImage();
+                        },
+                        child: Center(
+                          child: Material(
+                            elevation: 7.0,
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Container(
+                              width: 150,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Colors.black, width: 1.5),
+                                  borderRadius: BorderRadius.circular(20.0)),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20.0),
+                                child: Image.file(
+                                  selectedImage!,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
